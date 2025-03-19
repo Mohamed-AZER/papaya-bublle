@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAPAYA Bubble Cash - Play and Enjoy!</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add text shadow */
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 100px 20px; /* Increased padding */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Gradient Background */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #6a11cb, #2575fc, #6a11cb, #2575fc);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
+            z-index: 0;
+        }
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3rem; /* Larger font size */
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        header p {
+            font-size: 1.5rem; /* Larger font size */
+            margin-bottom: 40px;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+
+        .cta-button {
+            background-color: #ff6f61;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow */
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3b2f;
+            transform: translateY(-5px); /* Add hover effect */
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+
+        .feature {
+            flex: 1 1 300px;
+            margin: 10px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ff6f61; /* Match header color */
+        }
+
+        .feature p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            margin: 40px 0;
+        }
+
+        .screenshots h2 {
+            margin-bottom: 20px;
+            color: #ff6f61; /* Match header color */
+        }
+
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            background-color: #f4f4f9;
+        }
+
+        .horizontal-scroll img {
+            flex: 0 0 auto;
+            width: 300px;
+            height: auto; /* Maintain original aspect ratio */
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hide scrollbar for a cleaner look */
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .horizontal-scroll {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #fff;
+            padding: 40px 20px;
+            margin: 40px 0;
+        }
+
+        .testimonial {
+            max-width: 600px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #ff6f61; /* Match header color */
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff6f61;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature {
+                width: 90%;
+            }
+
+            .horizontal-scroll img {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <h1>PAPAYA Bubble Cash</h1>
+            <p>Test your skills and enjoy thrilling challenges in the classic Bubble Shooter game!</p>
+            <a href="#download" class="cta-button">Download Now</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Game Features</h2>
+            <div class="feature">
+                <h3>🎯 Classic and Exciting</h3>
+                <p>Enjoy the thrill of Bubble Shooter with new challenges.</p>
+            </div>
+            <div class="feature">
+                <h3>🏆 Compete with Others</h3>
+                <p>Challenge your friends or players from around the world.</p>
+            </div>
+            <div class="feature">
+                <h3>🚀 Fast-Paced Fun</h3>
+                <p>A quick-paced game that requires focus and strategy.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <div class="container">
+            <h2>Screenshots</h2>
+            <div class="horizontal-scroll">
+                <img src="750x750bb (1).jpeg" alt="Screenshot 1">
+                <img src="750x750bb (3).jpeg" alt="Screenshot 2">
+                <img src="750x750bb (2).jpeg" alt="Screenshot 3">
+                <img src="750x750bb.jpeg" alt="Screenshot 4">
+                <img src="750x750bb (4).jpeg" alt="Screenshot 1">
+                <img src="750x750bb (5).jpeg" alt="Screenshot 1">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Players Say</h2>
+            <div class="testimonial">
+                <p>"The best Bubble Shooter game I've ever played!"</p>
+                <span>- Ahmed</span>
+            </div>
+            <div class="testimonial">
+                <p>"The challenges are fun, and competing with others adds extra excitement."</p>
+                <span>- Sara</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <p>© 2023 PAPAYA Bubble Cash. All rights reserved.</p>
+            <p><a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
